@@ -1,0 +1,230 @@
+
+body{
+  background-color: #FFF5EE;
+}
+.logo{
+  
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.mynav {
+  background-color: #031a48;
+   
+}
+
+.mynav a, .mynav a ul li a{
+  color:white;
+}
+
+.mynav a:hover, .mynav a ul li a:hover{
+  color:white; 
+ 
+}
+.navbar-nav li:hover{
+    
+  border-bottom: 1px solid #f4f1de;
+}
+
+.user-profile li a:hover{
+  background-color: white !important;
+  color:  #031a48;
+}
+
+.user-menu{
+  background-color: #031a48;
+}
+.nav-item ul li{ 
+  background-color:white;
+}
+
+.dropdown-menu li:hover,.dropdown-menu li a:hover{ 
+  background-color:#031a48;
+}
+
+.active{
+  color: white !important;
+}
+/*buttons*/
+.view_recipe{
+   background-color: #3d405b;
+   color: white;
+   padding: auto;
+   min-height: 40px;
+       
+}
+
+/*end*/
+/* .intro{
+  background-color: ;
+} */
+.intro_h{
+  font-family: "mogra", system-ui;
+}
+.imgcontainer{
+  position: relative;
+  text-align: center;
+}
+.text{
+  position:absolute;
+  top: 200px;
+  left: 35px;
+  background-color: white;
+  /* opacity: 0.2; */
+}
+.text h1, h6{
+  color: black;
+}
+ul li{
+  list-style: none;
+}
+.footer{
+  background-color: #e07a5f;
+
+}
+
+.icon{
+  font-size: 1.5em;
+  color:#f4f1de ;
+}
+/* .nav-link{
+  color: white !important;
+font-family:"tienne", serif ;
+} */
+p{
+  font-family: "tienne", serif;
+}
+
+
+.dashboard ul li{
+  list-style: none;
+
+}
+
+.dashboard ul li a{
+  text-decoration: none;
+  color: white;
+  padding: auto;
+}
+
+.dashboard ul li:hover,.dashboard ul li a:hover{
+  background-color: #e07a5f;
+  color:white;
+   
+}
+
+.custom-btn{
+  color:white;
+  background-color: #9d0208;
+}
+
+.custom-btn:hover{
+  color:white;
+  background-color:#03071e;
+}
+.create-int{
+  background-color: #FFF5EE;
+}
+ 
+ /* .form-select{
+  width: max-content;
+  
+ } */
+
+ #cat-menu,#cat-menu li{
+  background-color: #031a48;
+ }
+ #cat-menu li a{
+  color:white ;
+ }
+
+#cat-menu li a:hover{
+  background-color: white !important;
+  color:  #031a48;
+}
+
+
+
+.search select{
+  min-height: 40px;
+}
+
+.search button{
+  min-height: 40px;
+  border-style: none;
+  background-color: #9d0208;
+  color: white;
+}
+.search button:hover{
+  background-color:#e07a5f;
+}
+
+
+.about li{
+  list-style: circle;
+}
+.abt-text p{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.box{
+  position:relative;
+}
+.content{
+  overflow: auto;
+}
+
+.bookmark-icon{
+  font-size: 1.7em;
+  background-color: #031a48;
+  border-radius: 50%;
+  color: white;
+ 
+}
+.bookmark-icon:hover{
+  background-color: #9d0208;
+}
+.anchor-book{
+  position:relative;
+ bottom: 0.5rem;
+  left: 70rem;
+}
+
+.descriptions{
+  padding:10px;
+  /* position:absolute; */
+  /* bottom:0px;
+  height:auto; */
+  width:100%;    
+  color:white;
+  background-color:#031a48 ;
+}
+.descriptions p{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size:small;
+}
+.descriptions img:hover{
+  border: #e07a5f 2px solid;
+}
+
+.descriptions:hover{ 
+  padding:10px; 
+  width:100%; 
+  background-color: #e07a5f !important;
+}
+
+.dash li{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  list-style:circle ;
+}
+.dash h5, .dash p{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+p{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#login{
+  min-height: 400px;
+}
