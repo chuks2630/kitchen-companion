@@ -33,6 +33,9 @@ body{
   background-color: white !important;
   color:  #031a48;
 }
+.user-profile li{
+  background-color: #031a48 !important;
+}
 
 .user-menu{
   background-color: #031a48;
@@ -177,7 +180,7 @@ p{
 }
 
 .bookmark-icon{
-  font-size: 1.7em;
+  font-size: 1.3em;
   background-color: #031a48;
   border-radius: 50%;
   color: white;

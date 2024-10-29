@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "user_guard.php";
 include_once "partials/header.php";
 require_once "autoloader.php";
 $user = new User;

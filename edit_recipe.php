@@ -52,10 +52,7 @@ if(isset($_GET['id'])){
                                                 ?>
                                             </select>
                                 </div>
-                                <div class=" col-md-8 offset-md-2 mb-3">
-                                    <label for="">Add Picture</label>
-                                    <input type="file" name="recipe_image" class="form-control border-dark"> 
-                                </div>
+                    
                                 <div class="col-md-8 mb-3 p-2 offset-md-2">
                                 <textarea name="description"  placeholder="Enter description" class="form-control border-dark"><?php echo $recipe['recipe_description']?></textarea>
                                 </div>

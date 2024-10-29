@@ -1,4 +1,8 @@
-
+<?php 
+require_once "classes/Category.php";
+$cat = new Category;
+$categories = $cat->view_all_categories();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +38,21 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                   </li>
+                  <li class="nav-item dropdown" style="background-color: #031a48 !important;">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Categories
+                    </a>
+                    <ul class="dropdown-menu user-profile" style="border-radius: 0px;background-color: #031a48;">
+                      <li><a class="dropdown-item category" href="#" data-value = "0">All Categories</a></li>
+                      <?php
+                        foreach($categories as $value){
+                          ?>
+                          <li><a class="dropdown-item category" href="#" data-value = "<?php echo $value['category_id']?>" ><?php echo $value['category_name']?></a></li>
+                          <?php
+                        }
+                      ?>
+                    </ul>
+                  </li>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="aboutus.php">About us</a>
                   </li>
@@ -48,7 +67,7 @@
                     Quick action
                   </a>
                 
-                  <ul class="dropdown-menu user-profile" style="border-radius: 0px;background-color: #3d405b;">
+                  <ul class="dropdown-menu user-profile" style="border-radius: 0px;background-color: #031a48;">
                     <li><a class="dropdown-item" href="user_recipes.php">My recipes</a></li>
                     <li><a class="dropdown-item" href="user_profile.php">Profile</a></li>
                     <li><a class="dropdown-item" href="bookmarks.php">Bookmarks</a></li>

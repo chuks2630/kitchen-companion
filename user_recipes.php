@@ -40,6 +40,37 @@ $userdeets = $user->get_user_byid($_SESSION['user_id']);
                     <h5 ><?php echo $recipe['recipe_name'];?></h5>
                     <p><?php echo substr($recipe['recipe_description'],0,70);?></p>
                     <a href="edit_recipe.php?id=<?php echo $recipe['recipe_id']?>" class="btn btn-sm btn-warning">Edit</a>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $recipe['recipe_id']?>">
+                    Add picture
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal<?php echo $recipe['recipe_id']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Add Picture</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="" class="add_pic" enctype = "multipart/form-data">
+                        
+                        <div class="modal-body">
+                            <div class="mb-3">
+                            <input type="hidden" name="recipe_id"  value ="<?php echo $recipe['recipe_id']?>"> 
+                                <input type="file" name="image" class="form-control border-dark recipe_image">
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" >Upload</button>
+                        </div>
+                        </form> 
+                        </div>
+                    </div>
+                    </div>
                 </div>
                         <?php
                     }

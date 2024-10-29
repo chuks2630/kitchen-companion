@@ -4,7 +4,7 @@ require_once "admin_guard.php";
 include_once "partials/header.php";
 require_once "classes/Admin.php";
 $a = new Admin;
-$response = $a->get_recipe_bystatus('pending');
+$response = $a->view_all_recipes();
 $numOfUsers = $a->get_numberofusers();
 $numOfPending = $a->get_numberofrecipes_bystatus('pending');
 $numOfApproved = $a->get_numberofrecipes_bystatus('approved');

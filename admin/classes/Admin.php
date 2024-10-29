@@ -61,6 +61,14 @@ class Admin extends Db{
         return $result;
     }
 
+    public function view_all_recipes(){
+        $sql = "SELECT * FROM recipes JOIN recipe_category ON recipes.recipe_cat_id = recipe_category.category_id ORDER BY date_added DESC";
+        $stmt = $this->dbcon->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     public function recipe_status($status,$recipe_id){
         $sql =  "UPDATE recipes SET status =? WHERE recipe_id= ?";
         $stmt = $this->dbcon->prepare($sql);

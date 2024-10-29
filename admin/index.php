@@ -33,13 +33,7 @@ $categories=$c->view_all_categories();
                 </div>
             </form>
             </div>
-            <div class="row mt-3">
-          <div class="col-md-10 offset-md-1">
-            <div class="row" id="result">
             
-            </div>
-          </div>
-        </div>
         <div class="row intro py-3 px-2">
            <div class="col-md-10 offset-md-1">
               <div class="row" id="recipe-cat">

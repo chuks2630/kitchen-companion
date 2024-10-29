@@ -29,16 +29,16 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
                     <img src="uploads/<?php echo $recipedeets['recipe_cover']?>" alt='recipe cover pic' class="img-fluid">
                 </div>
             </div>
-
-    
         <p><?php echo $recipedeets['recipe_description']?></p>
-        <p></p>
-        <h3 class="text-center" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><img src="assets/images/clipboard.png" alt="" width="30" style="border-radius: 30%;" class="d-inline-block align-text-top"> Procedures</h3><br>
+        
+        <div class= "my-5"><h3 class="text-center" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><img src="assets/images/clipboard.png" alt="" width="30" style="border-radius: 30%;" class="d-inline-block align-text-top"> Procedures</h3></div>
+        <div class="text-end pb-2 me-3"><a href="#" id="bookmark" class="me-3"><i class="fa-regular fa-bookmark bookmark-icon p-1"></i></a></div>
+                  
         <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><?php echo $recipedeets['procedures'];?></p>
         <div id="alert"></div>
         <input type="hidden" name="" id="rpid" value="<?php echo $_SESSION['recipe_id']?>">
         <input type="hidden" name="" id="usid" value="<?php  if(isset($_SESSION['user_id'])){ echo $_SESSION['user_id'];}?>">
-        <a href="#" class="anchor-book" id="bookmark"><i class="fa-regular fa-heart bookmark-icon p-1"></i></a>
+        
         <div class="row mt-3">
         <?php
             foreach($pics as $pic){

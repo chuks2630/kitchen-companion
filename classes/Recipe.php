@@ -89,7 +89,7 @@ class Recipe extends Db{
         return $result;
     }
 
-    public function update_recipe($recipe_id,$name,$description,$procedure,$cat_id,$file){
+    public function addPicture($recipe_id,$file){
         if($file['name'] !=""){
             $temp = $file['tmp_name'];
             $type = $file['type'];
@@ -101,7 +101,7 @@ class Recipe extends Db{
             $max_size_allowed = 2 * 1024 * 1024;
 
          if($size > $max_size_allowed){
-                $_SESSION['warning']= "Your file size is too large. The maximum is 2mb";
+                $_SESSION['error']= "Your file size is too large. The maximum is 2mb";
                 exit;
          }
             $extension = pathinfo($filename, PATHINFO_EXTENSION);
@@ -109,35 +109,30 @@ class Recipe extends Db{
             $to = "../uploads/$newname";
             
             if(!in_array($extension,$allowed)){
-                $_SESSION['warning'] = "Please upload either of png, jpg,jpeg";
+                $_SESSION['error'] = "Please upload either of png, jpg,jpeg";
                 return 0;
             }else{
                 //inserting into pictures query
                 move_uploaded_file($temp,$to);
                 $sql= "INSERT INTO pictures(picture_recipe_id,picture_file)VALUES(?,?)";
                 $stmt = $this->dbcon->prepare($sql);
-                $stmt->execute([$recipe_id,$newname]);
-
-                $sql = "UPDATE recipes SET recipe_name =?, recipe_description=?, procedures=?, recipe_cat_id=? WHERE recipe_id= ?";
-                $stmt = $this->dbcon->prepare($sql);
-               $result =  $stmt->execute([$name,$description,$procedure,$cat_id,$recipe_id]);
-               if($result == true){
-                    $_SESSION['success'] = "Recipe successfully updated";
-               }
-            }
-            //updating recipes query
-           
-            
-             
+                $result = $stmt->execute([$recipe_id,$newname]);
+                return $result;
+            }  
         }else{
-            $sql = "UPDATE recipes SET recipe_name =?, recipe_description=?, procedures=?, recipe_cat_id=? WHERE recipe_id= ?";
-            $stmt = $this->dbcon->prepare($sql);
-            $result=$stmt->execute([$name,$description,$procedure,$cat_id,$recipe_id]);
-            if($result == true){
-                $_SESSION['success'] = "Recipe successfully updated";
-           }
+            $_SESSION['error'] = "Please select a file to upload";
+            return 0;
         }
+    }
 
+    public function update_recipe($recipe_id,$name,$description,$procedure,$cat_id){
+
+        $sql = "UPDATE recipes SET recipe_name =?, recipe_description=?, procedures=?, recipe_cat_id=? WHERE recipe_id= ?";
+        $stmt = $this->dbcon->prepare($sql);
+        $result=$stmt->execute([$name,$description,$procedure,$cat_id,$recipe_id]);
+        if($result == true){
+            $_SESSION['success'] = "Recipe successfully updated";
+       }
         
     }
 
